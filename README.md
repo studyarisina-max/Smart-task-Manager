@@ -28,7 +28,7 @@ Database (MongoDB): Persists user credentials (hashed with Bcrypt) and task data
 
 4. Setup & Installation
 Backend Setup
-Clone the Repo: git clone <your-repo-link>
+Clone the Repo: git clone <gh repo clone studyarisina-max/Smart-task-Manager>
 
 Install Packages: npm install
 
@@ -43,9 +43,9 @@ API Configuration: In services/api.ts, update the baseURL to your live Render li
 
 https://internship-11-ju1d.onrender.com/api
 
-Execution: Run npx expo start --tunnel to generate the connection bridge.
+Execution: Run npx expo start  to generate the connection bridge.
 
-Testing: Scan the QR code or enter the exp:// link in the Expo Go app.
+Testing: Scan the QR code 
 
 5. Security & Error Handling
 Password Hashing: Implemented bcryptjs to ensure user passwords are never stored in plain text.
