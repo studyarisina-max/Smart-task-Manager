@@ -1,31 +1,34 @@
 const express = require('express');
 const router = express.Router();
+router.get('/test', (req, res) => {
+    res.json({ message: "Auth route is working!" });
+});
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User'); // Check if this path is correct!
+const User = require('./User'); 
 
-// @route   POST api/auth/register
+
 router.post('/register', async(req, res) => {
     const { name, email, password } = req.body;
 
     try {
-        // 1. Check if user already exists
+        
         let user = await User.findOne({ email });
         if (user) {
             return res.status(400).json({ message: 'User already exists' });
         }
 
-        // 2. Create new user instance
+       
         user = new User({ name, email, password });
 
-        // 3. Hash the password
+     
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(password, salt);
 
-        // 4. Save to MongoDB
+       
         await user.save();
 
-        // 5. Return JWT Token
+   
         const payload = { user: { id: user.id } };
         jwt.sign(
             payload,
@@ -41,7 +44,7 @@ router.post('/register', async(req, res) => {
     }
 });
 
-// @route   POST api/auth/login
+
 router.post('/login', async(req, res) => {
     const { email, password } = req.body;
     try {
