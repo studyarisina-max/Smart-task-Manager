@@ -9,21 +9,21 @@ const AddTaskScreen = ({ navigation }: any) => {
   const [loading, setLoading] = useState(false);
 
   const handleSave = async () => {
-    // Basic Validation: Don't allow empty titles
+    
     if (!title.trim()) {
       return Alert.alert('Validation Error', 'Please enter a task title');
     }
 
     setLoading(true);
     try {
-      // Sending the data to your Node.js backend
+      
       await API.post('/tasks', { 
         title: title.trim(), 
         description: description.trim() 
       });
 
       Alert.alert('Success', 'Task created successfully!');
-      navigation.goBack(); // This takes the user back to the Dashboard
+      navigation.goBack(); 
     } catch (error: any) {
       console.error(error);
       Alert.alert('Error', 'Could not save the task. Check your server connection.');
