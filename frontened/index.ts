@@ -1,13 +1,4 @@
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-}
+import { registerRootComponent } from 'expo';
 
-export interface Task {
-  _id: string;
-  title: string;
-  description?: string;
-  status: 'Pending' | 'In Progress' | 'Completed';
-  createdAt: string;
-}
+import App from './App';
+registerRootComponent(App);
