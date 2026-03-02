@@ -26,7 +26,7 @@ Database (MongoDB): Persists user credentials (hashed with Bcrypt) and task data
 4. Setup & Installation
    
 Backend Setup
-Clone the Repo: git clone <gh repo clone studyarisina-max/Smart-task-Manager>
+Clone the Repo: git clone <https://github.com/studyarisina-max/Smart-task-Manager.git>
 Install Packages: npm install
 Environment Variables: Create a .env file containing your MONGO_URI and JWT_SECRET.
 Deployment: Push to GitHub and connect to Render.com using the "Web Service" setting.
